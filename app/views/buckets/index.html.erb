@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Buckets</h1>
+
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Nome da Politica</th>
+      <th scope="col">Nome do bucket</th>
+      <th colspan="3" scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buckets.each do |bucket| %>
+      <tr>
+        <td><%= bucket.name %></td>
+        <td><%= bucket.policy_name %></td>
+        <td><%= bucket.bucket_user_name %></td>
+        <td><%= link_to 'Detalhes', bucket %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Criar um novo bucket', new_bucket_path %>

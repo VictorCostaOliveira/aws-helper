@@ -1,0 +1,21 @@
+<%= form_with(model: bucket, local: true, class: 'mt-5') do |form| %>
+
+  <div class="form-group">
+    <%= form.label :name, 'Nome do bucket' %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Ex: aws-seu-projeto" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :policy_name, 'Nome do Politica' %>
+    <%= form.text_field :policy_name, class: "form-control", placeholder: 'Ex: SeuProjetoS3' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :bucket_user_name, 'Nome do usuario'%>
+    <%= form.text_field :bucket_user_name, class: "form-control", placeholder: 'Ex: seu-projeto' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Criar', class: "btn btn-darks btn-block" %>
+  </div>
+<% end %>

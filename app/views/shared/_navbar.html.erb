@@ -1,0 +1,21 @@
+<% if user_signed_in? %>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <%= link_to 'AWS Helper', buckets_path, class: "navbar-brand"%>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item <%= active?(buckets_path)%>">
+          <%= link_to 'Todos os buckets', buckets_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item <%= active?(new_bucket_path)%>">
+          <%= link_to 'Novo bucket', new_bucket_path, class: "nav-link"%>
+        </li>
+      </ul>
+    </div>
+    <div class="form-inline my-2 my-lg-0">
+      <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: "nav-link"%>
+    </div>
+  </nav>
+<% end %>

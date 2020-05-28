@@ -1,0 +1,20 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: root
+
+development:
+  <<: *default
+  database: aws_helper_development
+
+test:
+  <<: *default
+  database: aws_helper_test
+
+production:
+  <<: *default
+  database: aws_helper_production
+  username: aws_helper
+  password: <%= ENV['AWS_HELPER_DATABASE_PASSWORD'] %>
